@@ -352,7 +352,7 @@
           placeholder="your@email.com"
           autocomplete="email"
         />
-        <button type="button">Notify me</button>
+        <button type="button" id="notify-btn" onclick="handleSubmit()">Notify me</button>
       </div>
       <div class="input-note">Updates only when there is something worth saying. No noise.</div>
       <div class="error-note" id="error-note">Something went wrong — please try again or email us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6cec3cacac9e6d2cec3ced3cbc7c8cac7dfc3d488cfc9">[email&#160;protected]</a></div>
@@ -393,7 +393,7 @@
   // ───────────────────────────────────────────────────────────────────────────
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqewzbrz';
 
-  const btn     = document.querySelector('.input-row button');
+  const btn     = document.getElementById('notify-btn');
   const input   = document.getElementById('email-input');
   const block   = document.getElementById('capture-block');
   const success = document.getElementById('success-msg');
@@ -442,9 +442,7 @@
       btn.textContent = 'Notify me';
       errNote.classList.add('visible');
     }
-
-  // Attach event listener to button
-  btn.addEventListener('click', handleSubmit);
+  }
 </script>
 </body>
 </html>
