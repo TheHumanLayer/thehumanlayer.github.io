@@ -439,4 +439,12 @@
     } catch (err) {
       // Restore button, show error note
       btn.disabled    = false;
-      btn.textContent = 'Noti
+      btn.textContent = 'Notify me';
+      errNote.classList.add('visible');
+    }
+
+  // Attach event listener to button
+  btn.addEventListener('click', handleSubmit);
+</script>
+</body>
+</html>
