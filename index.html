@@ -244,21 +244,6 @@
     display: block;
   }
 
-  /* ── DIMENSION RULE ── */
-  .dim-rule {
-    display: flex;
-    height: 3px;
-    max-width: 260px;
-    margin: clamp(48px, 6vw, 72px) 0 0;
-    opacity: 0;
-    animation: fadeIn 1.2s ease forwards;
-    animation-delay: 1.3s;
-  }
-
-  .dim-rule span {
-    flex: 1;
-  }
-
   /* ── FOOTER ── */
   footer {
     padding: clamp(24px, 3vw, 36px) 0 clamp(32px, 4vw, 48px);
@@ -336,12 +321,25 @@
     <h1 style="animation-delay:0.3s">The system beneath<br>AI transformation<br><em>is almost never measured.</em></h1>
 
     <p class="body-text">
-      Organisations are investing heavily in AI. Most are not seeing value scale.
+      Organisations are investing heavily in AI. Most are not seeing value at scale.
       <strong>The constraint is almost never the technology.</strong>
-      It sits in the human system beneath it — and it is what determines whether any investment creates real business value, or stays trapped at the use-case level.
+      It sits in the human system beneath it — and determines whether investment creates real business value or stays trapped at the use-case level.
       <br><br>
-      <em>We are building the discipline to change that.</em>
+      <em>I am building the discipline to change that.</em>
     </p>
+
+    <div style="
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: rgba(240, 237, 230, 0.55);
+      margin-bottom: clamp(28px, 4vw, 40px);
+      margin-top: calc(-1 * clamp(16px, 2.5vw, 28px));
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.9s;
+    ">Ewan Clarkson &nbsp;·&nbsp; Founder, The Human Layer</div>
 
     <div class="capture" id="capture-block">
       <div class="capture-label">Stay informed</div>
@@ -352,23 +350,14 @@
           placeholder="your@email.com"
           autocomplete="email"
         />
-        <button type="button" id="notify-btn" onclick="handleSubmit()">Notify me</button>
+        <button type="button">Notify me</button>
       </div>
       <div class="input-note">Updates only when there is something worth saying. No noise.</div>
       <div class="error-note" id="error-note">Something went wrong — please try again or email us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6cec3cacac9e6d2cec3ced3cbc7c8cac7dfc3d488cfc9">[email&#160;protected]</a></div>
     </div>
 
     <div class="success-msg" id="success-msg">
-      Noted. We will be in touch when it matters.
-    </div>
-
-    <div class="dim-rule">
-      <span style="background:var(--d1)"></span>
-      <span style="background:var(--d2)"></span>
-      <span style="background:var(--d3)"></span>
-      <span style="background:var(--d4)"></span>
-      <span style="background:var(--d5)"></span>
-      <span style="background:var(--d6)"></span>
+      Noted. I will be in touch when it matters.
     </div>
 
   </main>
@@ -377,7 +366,7 @@
     <div class="footer-domains">
       <a href="https://thehumanlayer.io">thehumanlayer.io</a>
     </div>
-    <div class="footer-right">© 2026 The Human Layer</div>
+    <div class="footer-right">© 2026 Ewan Clarkson. The Human Layer.</div>
   </footer>
 
 </div>
@@ -393,7 +382,7 @@
   // ───────────────────────────────────────────────────────────────────────────
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqewzbrz';
 
-  const btn     = document.getElementById('notify-btn');
+  const btn     = document.querySelector('.input-row button');
   const input   = document.getElementById('email-input');
   const block   = document.getElementById('capture-block');
   const success = document.getElementById('success-msg');
